@@ -14,5 +14,15 @@ public class KGVTest {
         assertEquals(24, KGV.getKGV(6, 8));
         assertEquals(8, KGV.getKGV(8, 4));
         assertEquals(5681, KGV.getKGV(437, 299));
+        assertEquals(39, KGV.getKGV(39, 39));
+        assertThrows(IllegalArgumentException.class, () -> {
+            KGV.getKGV(0, 0);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            KGV.getKGV(-4, 6);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            KGV.getKGV(0, -4);
+        });
     }
 }
